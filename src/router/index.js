@@ -3,7 +3,7 @@ import Router from 'vue-router'
 import Index from '@/pages/IndexPage'
 import DocuMent from '@/pages/DocuMent'
 import Biaodan from '../components/BiaoDan'
-
+import WebPages from '../components/WebPages'
 
 
 Vue.use(Router);
@@ -25,7 +25,11 @@ export default new Router({
       name: 'Biaodan',
       component: Biaodan
     },
-
+      {
+          path: '/WebPages',
+          name: 'WebPages',
+          component: WebPages
+      },
 
   ]
 })
