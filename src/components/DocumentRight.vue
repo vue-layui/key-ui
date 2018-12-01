@@ -1,13 +1,17 @@
 <template>
-    <biao-dan></biao-dan>
+    <!--<biao-dan></biao-dan>-->
+    <!--<web-paging></web-paging>-->
+    <router-view></router-view>
 </template>
 
 <script>
-    import BiaoDan from './BiaoDan'
+    // import BiaoDan from './BiaoDan'
+    import WebPaging from "./WebPaging";
     export default {
         name: "DocumentRight",
         components:{
-            BiaoDan
+            WebPaging,
+            // BiaoDan
         }
     }
 </script>

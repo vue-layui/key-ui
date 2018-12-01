@@ -3,9 +3,8 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import '@/assets/js/jquery-1.8.3.min.js'
-// import './assets/css/iconfont.css'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
+import $ from 'jquery'
 // require styles
 Vue.use(VueAwesomeSwiper, /* { default global options } */)
 //引入原版layui

@@ -1,40 +1,48 @@
 <template>
   <div class="left">
     <div class="BigBox">
+        <h2 style="font-weight: 100;">基本的表单验证及三级联动：</h2>
+        <hr/>
       <form action="#">
         <label>用户名：</label><input
               @blur="RegularUser()"
-              class="FormUser" type="text"
-              placeholder="请输入标题">
+              class="FormUser"
+              type="text"
+              placeholder="请输入用户名">
         <i id="UserPrompt"></i><br/>
         <label>密码：</label><input
               @blur="RegularPassWord()"
               class="FormPassword"
-              type="text" >
+              type="password"
+              placeholder="请输入用户密码">
         <i id="PassWordPrompt"></i><br/>
         <label>验证手机：</label><input
               @blur="RegularPhone()"
               class="FromPhone"
-              type="text" >
+              type="text"
+              placeholder="请输入您的手机号">
         <i id="PhonePrompt"> </i><br/>
         <label>验证邮箱：</label><input
               @blur="RegularEmail()"
               class="FromEmail"
-              type="text" >
+              type="text"
+              placeholder="请输入您的电子邮箱">
         <i id="EmailPrompt"></i><br/>
         <label>身份证号：</label><input
               @blur="RegularCard()"
               class="FromCard"
-              type="text" >
+              type="text"
+              placeholder="请输入您的身份证号">
         <i id="CardPrompt"></i><br/>
         <!--爱好-->
         <label class="live">喜好：</label>
         <div  class="box_01" id="box" @click="flag=!flag">
-          <p id="con">阅读</p><img id="ps" src="../assets/imgs/1.png" alt="">
+          <p id="con">阅读</p>
+            <img id="ps01" src="../assets/imgs/3.png"  alt="">
           <ul id="uls" v-show="flag" >
             <li >阅读</li>
             <li >写代码</li>
-            <li>游泳</li>
+            <li>游泳</li> 
             <li>爬山</li>
             <li>上课</li>
             <li>聊天</li>
@@ -77,11 +85,27 @@
         <input calss="FormReset" type="reset" value="重置">
       </form>
         <!--说明-->
-       <p class="state"> 通过上述的小小演示，你已经大致了解了一波 keyui的表单模块，你可能会觉得他还算不错，
+       <p class="state">通过上述的小小演示，你已经大致了解了一波 keyui的表单模块，你可能会觉得他还算不错，
            但并不太过瘾？譬如你希望看到日期选择、图片上传等等。然而你必须认识到，本篇文档核心介绍的是表单元素，对于日期、
            上传等更多丰富的元素，其实也是可以很方便地穿插在内的。
        </p>
+        <h2 style="font-weight: 100; margin-top: 15px">核心代码如下：</h2>
+        <hr/>
+        <p class="code">
+            <i>正则表达式:</i><br/>
+            <span>用户名：/^[a-zA-Z][a-zA-Z0-9]{3,15}/</span><br/>
+            <span>密码：/^[0-9a-z@!$%&*#]{8,16}$/</span><br/>
+            <span>手机号：/^1[3-9]\d{9}$/</span><br/>
+            <span>电子邮件：/^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/</span><br/>
+            <span>身份证号：/^[1-9]\d{5}(18|19|([23]\d))\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\d{3}[0-9Xx]$/</span>
+        </p>
+        <p class="linkage">
+            <i>三级联动:</i><br/>
+            <img src="../assets/imgs/4.png" alt="">
+            <img src="../assets/imgs/5.png" alt="">
+        </p>
     </div>
+
   </div>
 </template>
 
@@ -121,19 +145,16 @@
       },
       mounted(){
         $("#box").click(function(){
-          $("#uls").slideToggle("slow")
+          $("#uls").slideToggle("slow");
         })
 
         $("li").click(function(){
+            $("#uls li").css({"background":"#fff"});
           $(this).css({
-            background: "green",
+            background: "#009688",
 
           })
-          if($(this).style.background==="green"){
-              $(this).style.background="green"
-          }else{
-              $("li").style.background="white"
-          }
+
           let lue=$(this).html();
            $("#con").html(lue)
         })
@@ -238,11 +259,12 @@
     }
     .left{
       width: 86.955%;
-      background: #cccccc;
+      background: white;
       float: right;
 
       form{
         font-size: 14px;
+          margin-top: 30px;
         label:nth-of-type(1){
           margin-left: 15px;
         }
@@ -274,25 +296,31 @@
             line-height: 37px;
             display: inline-block;
           }
-          #ps{
+          #ps01{
             padding-left: 10px;
             line-height: 37px;
+              
           }
           #uls{
             /*display: none;*/
             position:absolute;
             left: 0px;
             top: 37px;
-            box-shadow: 0 0 5px;
+            /*box-shadow: 0 0 5px;*/
             background: white;
+              height: 200px;
+              overflow-y: auto;
+              border: 1px solid #cccccc;
+              border-top: 0;
             li{
               line-height: 37px;
               list-style: none;
-              width: 300px;
+              width: 283px;
               height: 37px;
-
-
             }
+              li:nth-of-type(1){
+                  background:#009688 ;
+              }
           }
 
         }
@@ -361,10 +389,40 @@
       }
         /*说明*/
         .state{
-            width: 90%;
+            padding-left: 20px;
+            width: 88%;
             min-height: 60px;
             box-shadow: 0 0 5px;
-            background: white;
+            background: #cccccc url("../assets/imgs/2.png") repeat-y left;
+
+        }
+        /*核心代码：*/
+        .code{
+            width: 90%;
+            border-top: 30px;
+            background: black;
+            color: white;
+            margin-top: 20px;
+            i{
+                font-size: 18px;
+            }
+            span{
+                line-height: 35px;
+                margin-left: 30px;
+            }
+        }
+        .linkage{
+            margin-top: 30px;
+            i{
+                font-size: 18px;
+            }
+            img:nth-of-type(1){
+                 width: 90%;
+            }
+            img:nth-of-type(2){
+                width: 90%;
+                height: 400px;
+            }
         }
     }
 
