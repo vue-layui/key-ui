@@ -21,7 +21,7 @@ export default new Router({
       component: DocuMent,
         children: [
             {
-                path: '/DocumentRight',
+                path: '',
                 name: 'DocuDocumentRightMent',
                 component: DocumentRight,
                 children:[
