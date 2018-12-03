@@ -24,7 +24,7 @@
                 <i class="iconfont icon-yousanjiaoxiangyoumianxing key_right"></i>
               </a>
             </li>
-          <li class="key_li" @mouseover="hover($event)" @mouseout="over($event)">
+          <li class="key_li" @click="goha" @mouseover="hover($event)" @mouseout="over($event)">
             <a>
               <i class="iconfont icon-iconfontwuyuandaohang"></i>
               <span>导航</span>
@@ -59,14 +59,14 @@
               <i class="iconfont icon-yousanjiaoxiangyoumianxing key_right"></i>
             </a>
           </li>
-          <li class="key_li" @mouseover="hover($event)" @mouseout="over($event)">
+          <li class="key_li" @click="golo" @mouseover="hover($event)" @mouseout="over($event)">
             <a>
               <i class="iconfont icon-jiazai"></i>
               <span>加载</span>
               <i class="iconfont icon-yousanjiaoxiangyoumianxing key_right"></i>
             </a>
           </li>
-          <li class="key_li" @mouseover="hover($event)" @mouseout="over($event)">
+          <li class="key_li" @click="goca" @mouseover="hover($event)" @mouseout="over($event)">
             <a>
               <i class="iconfont icon-danchukuang"></i>
               <span>弹出框</span>
@@ -80,7 +80,7 @@
               <i class="iconfont icon-yousanjiaoxiangyoumianxing key_right"></i>
             </a>
           </li>
-          <li class="key_li" @mouseover="hover($event)" @mouseout="over($event)">
+          <li class="key_li" @click="gocar" @mouseover="hover($event)" @mouseout="over($event)">
             <a>
               <i class="iconfont icon-qicheqianlian-"></i>
               <span>购物车</span>
@@ -131,6 +131,18 @@
       },
       gofe(){
         this.$router.push('/DocuMent/WebPaging')
+      },
+      goha(){
+        this.$router.push('/DocuMent/PopUpindex')
+      },
+      golo(){
+        this.$router.push('/DocuMent/LoadIng')
+      },
+      gocar(){
+        this.$router.push('/DocuMent/Car')
+      },
+      goca(){
+        this.$router.push('/Document/AlertIndex')
       },
       hover(e) {
         e.currentTarget.style.background = 'green'

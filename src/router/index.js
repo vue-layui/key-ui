@@ -3,8 +3,11 @@ import Router from 'vue-router'
 import Index from '@/pages/IndexPage'
 import DocuMent from '@/pages/DocuMent'
 // import PopUp from '../components/PopUp'
+import LoadIng from '../components/LoadIng'
 import DocumentRight from '../components/DocumentRight'
 import ButtOn from '../components/ButtOn'
+import Car from '../components/Cars/Car'
+//
 import Tab from '../components/tabs'
 import RotaTion from '../components/rotation'
 //lzk
@@ -13,6 +16,9 @@ import Biaodan from '../components/From/BiaoDan'
 //zsj
 import Table from '../components/table'
 import Score from '../components/score'
+//nwr
+import PopUpindex from '../components/PopUpindex'
+import AlertIndex from '../components/AlertIndex'
 
 Vue.use(Router);
 
@@ -61,6 +67,21 @@ export default new Router({
         {
           path:'WebPaging',
           component: WebPaging
+        },
+        {
+          path:'PopUpindex',
+          component:PopUpindex
+        },
+        {
+          path:'LoadIng',
+          component:LoadIng
+        },
+        {
+          path: 'Car',
+          component:Car
+        },{
+          path: 'AlertIndex',
+          component: AlertIndex
         }
       ]
     },

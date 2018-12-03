@@ -3,6 +3,8 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import store from './store'
+
 import './assets/css/all.css'
 import './assets/css/iconfont.css'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
@@ -18,6 +20,7 @@ Vue.config.productionTip = false;
 new Vue({
   el: '#app',
   router,
+  store,
   render(h){
     return h(App)
   }

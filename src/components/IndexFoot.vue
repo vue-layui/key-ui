@@ -15,20 +15,15 @@
         <p>如果眼下还是一团零星之火，那运筹帷幄之后，迎面东风，就是一场烈焰燎原吧，那必定会是一番尽情的燃烧。待，秋风萧瑟时，散作满天星辰，你看那四季轮回，正是 Keyui 不灭的执念。</p>
       </div>
     </div>
-
-    <load-ing>
-    </load-ing>
     <keyUiLogo></keyUiLogo>
   </div>
 </template>
 
 <script>
-  import LoadIng from '../components/LoadIng'
   import keyUiLogo from '../components/common/keyUiLogo'
   export default {
     name: "IndexFoot",
     components: {
-        LoadIng,
         keyUiLogo
     },
     methods: {

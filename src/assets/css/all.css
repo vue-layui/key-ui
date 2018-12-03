@@ -146,7 +146,7 @@ html, body {
 }
 
 .K-btn {
-  margin-right: 10px;
+  margin: 10px;
   width: 100px;
   height: 30px;
   -webkit-animation-name: greenPulse;
@@ -155,7 +155,7 @@ html, body {
 }
 
 .K-btn1 {
-  margin-right: 10px;
+  margin: 10px;
   width: 120px;
   height: 40px;
   -webkit-animation-name: greenPulse;
@@ -164,6 +164,7 @@ html, body {
 }
 
 .K-btn2 {
+  margin: 10px;
   width: 140px;
   height: 50px;
   -webkit-animation-name: greenPulse;
@@ -172,7 +173,7 @@ html, body {
 }
 
 .K-btn3 {
-  margin-right: 10px;
+  margin: 10px;
   width: 100px;
   height: 30px;
   -webkit-animation-name: redPulse;
@@ -181,7 +182,7 @@ html, body {
 }
 
 .K-btn4 {
-  margin-right: 10px;
+  margin: 10px;
   width: 120px;
   height: 40px;
   -webkit-animation-name: redPulse;
@@ -190,6 +191,7 @@ html, body {
 }
 
 .K-btn5 {
+  margin: 10px;
   width: 140px;
   height: 50px;
   -webkit-animation-name: redPulse;
@@ -198,7 +200,7 @@ html, body {
 }
 
 .K-btn6 {
-  margin-right: 10px;
+  margin: 10px;
   width: 100px;
   height: 30px;
   -webkit-animation-name: yellowPulse;
@@ -207,7 +209,7 @@ html, body {
 }
 
 .K-btn7 {
-  margin-right: 10px;
+  margin: 10px;
   width: 120px;
   height: 40px;
   -webkit-animation-name: yellowPulse;
@@ -216,6 +218,7 @@ html, body {
 }
 
 .K-btn8 {
+  margin: 10px;
   width: 140px;
   height: 50px;
   -webkit-animation-name: yellowPulse;
@@ -224,7 +227,7 @@ html, body {
 }
 
 .K-btn9 {
-  margin-right: 10px;
+  margin: 10px;
   width: 100px;
   height: 30px;
   -webkit-animation-name: bluePulse;
@@ -233,7 +236,7 @@ html, body {
 }
 
 .K-btn10 {
-  margin-right: 10px;
+  margin: 10px;
   width: 120px;
   height: 40px;
   -webkit-animation-name: bluePulse;
@@ -242,6 +245,7 @@ html, body {
 }
 
 .K-btn11 {
+  margin: 10px;
   width: 140px;
   height: 50px;
   -webkit-animation-name: bluePulse;
@@ -250,7 +254,7 @@ html, body {
 }
 
 .K-btn12 {
-  margin-right: 10px;
+  margin: 10px;
   width: 100px;
   height: 30px;
   -webkit-animation-name: gayPulse;
@@ -259,7 +263,7 @@ html, body {
 }
 
 .K-btn13 {
-  margin-right: 10px;
+  margin: 10px;
   width: 120px;
   height: 40px;
   -webkit-animation-name: gayPulse;
@@ -268,13 +272,16 @@ html, body {
 }
 
 .K-btn14 {
+  margin: 10px;
   width: 140px;
   height: 50px;
   -webkit-animation-name: gayPulse;
   -webkit-animation-duration: 2s;
   -webkit-animation-iteration-count: infinite;
 }
+.K-bbox{
 
+}
 /*弹出*/
 .K-box {
   width: auto;
@@ -483,7 +490,7 @@ html, body {
   width: 51%;
   display: block;
   line-height: 60px;
-  text-align: center;
+  text-align: left;
 }
 
 input[type="checkbox"] {
@@ -821,8 +828,7 @@ input[type="checkbox"] + label:after {
   float: left;
   overflow: hidden;
   cursor: pointer !important;
-  margin-top: 65px;
-  margin-left: 15px;
+  margin-top: 30px;
 }
 .K-add:before, .K-add:after {
   content: "";
@@ -863,4 +869,131 @@ input[type="checkbox"] + label:after {
 
 .K-ae{
   display: flex;
+}
+
+.K-title {
+  width: 75%;
+  margin: 10px;
+  background: #666;
+  padding: 20px;
+}
+.K-di {
+  display: block;
+  width: 3px;
+  height: 20px;
+  background: #1E9FFF;
+  float: left;
+  margin-right: 10px;
+}
+.K-pe{
+  width: 100%;
+}
+.introduction{
+  width: 100%;
+  height: 52px;
+  background: #f2f2f2;
+  margin-top: 20px;
+  border-left: 5px solid #009688;
+  font-size: 14px;
+}
+.introduction p{
+  margin-left: 14px;
+  padding-top: 10px;
+}
+
+
+/*button*/
+.btn-epic {
+  position: relative;
+  margin: 30px;
+  width: 100%;
+  max-width: 260px;
+  height: 52px;
+  background: #fff;
+  transform: translate3d(0px, 0%, 0px);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: 0.05em;
+  transition-delay: 0.6s;
+  overflow: hidden;
+}
+.btn-epic:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #3ad2d0;
+  border-radius: 50% 50% 0 0;
+  transform: translateY(100%) scaleY(0.5);
+  transition: all 0.6s ease;
+}
+.btn-epic:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  border-radius: 0;
+  transform: translateY(0) scaleY(1);
+  transition: all 0.6s ease;
+}
+.btn-epic div {
+  position: relative;
+  top: 16px;
+  width: 100%;
+  height: 26px;
+  text-transform: uppercase;
+  overflow: hidden;
+}
+.btn-epic span {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  width: 100%;
+  text-align: center;
+  transition: transform 0.5s ease;
+}
+.btn-epic span:first-child {
+  color: #fff;
+  transform: translateY(24px);
+}
+.btn-epic span:last-child {
+  color: #1e0f21;
+  transform: translateY(0);
+}
+.btn-epic:hover {
+  background: #3ad2d0;
+  transition: background 0.2s linear;
+  transition-delay: 0.6s;
+}
+.btn-epic:hover:after {
+  border-radius: 0 0 50% 50%;
+  transform: translateY(-100%) scaleY(0.5);
+  transition-delay: 0;
+}
+.btn-epic:hover:before {
+  border-radius: 0;
+  transform: translateY(0) scaleY(1);
+  transition-delay: 0;
+}
+.btn-epic:hover span:first-child {
+  transform: translateY(0);
+}
+.btn-epic:hover span:last-child {
+  transform: translateY(-24px);
+}
+.K-ref {
+  width: 600px;
+  margin: 50px;
+}
+.flow-default{
+  float: left;
+}
+.introduction{
+
 }

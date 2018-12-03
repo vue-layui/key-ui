@@ -27,7 +27,7 @@
           </div>
         </div>
       </div>
-      <p class="K-test"><i></i>这是一个实例，测试您的浏览器是否支持这些案例展示以及key-ui</p>
+      <p class="K-title"><i class="K-di"></i>这是一个实例，测试您的浏览器是否支持这些案例展示以及key-ui</p>
       <div class="flex">
         <ul>
           <li>1</li>
@@ -36,7 +36,6 @@
           <li>4</li>
           <li>5</li>
         </ul>
-
       </div>
 
       <div class="K-cobe">
@@ -145,19 +144,7 @@
 </script>
 
 <style lang="scss" scoped>
-  .K-test {
-    margin: 10px;
-    background: #666;
-    padding: 20px;
 
-    i {
-      display: block;
-      width: 3px;
-      height: 20px;
-      background: #1E9FFF;
-      float: left;
-    }
-  }
 
   .upload_warp_img_div_del {
     position: absolute;

@@ -27,7 +27,7 @@ export default {
   },
   methods:{
     goch(){
-      this.$router.push('/DocuMent')
+      this.$router.push('DocuMent')
     },
     mouseEnter(index){
       this.itemHoverIndex=index;

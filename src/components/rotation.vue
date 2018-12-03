@@ -61,21 +61,11 @@
     font-weight: normal;
     border-bottom: 1px solid #eeeeee;
 }
-.introduction{
-    width: 100%;
-    height: 52px;
-    background: #f2f2f2;
-    margin-top: 20px;
-    border-left: 5px solid #009688;
-    font-size: 14px;
-}
+
 .introduction2{
     margin-top: 10px;
 }
-.introduction p{
-    margin-left: 14px;
-    padding-top: 10px;
-}
+
 .introduction2 p{
     padding-top: 16px;
 }
