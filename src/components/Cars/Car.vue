@@ -1,5 +1,6 @@
 <template>
     <div class="K-dis">
+      <div class="introduction"><p>这是一个购物车的实例，其中包含全选单选计数选择，删除添加物品实例</p></div>
       <div id="table">
         <div class="cart">
           <hr>
@@ -34,7 +35,9 @@
             </li>
             <li class="comSingle">￥{{i.single}}</li>
             <li class="comNum">
-              <button class="cut" @click="cut(index)" :disabled="i.num === 1">-</button><input v-model="i.num" @click="saveIndex(index)"><button class="add" @click="add(index)">+</button>
+              <button class="cut" @click="cut(index)" :disabled="i.num === 1">-</button>
+              <input v-model="i.num" @click="saveIndex(index)">
+              <button class="add" @click="add(index)">+</button>
             </li>
             <li class="comTotal">￥{{(i.single * i.num).toFixed(1)}}</li>
             <li class="comEdit">
@@ -69,7 +72,7 @@
           return {
             List: [{
               name: '黄鹤楼香烟',
-              images: "http://www.jq22.com/img/cs/500x500-1.png",
+              images: "../../../static/img/s1.jpg",
               gift: ['打火机', 'XXX'],
               single: 19.2,
               num: 1,
@@ -77,7 +80,7 @@
             }, {
               name: '可乐',
               gift: ['吸管', 'XXX'],
-              images: "http://www.jq22.com/img/cs/500x500-2.png",
+              images: "../../../static/img/s2.jpg",
               single: 6.1,
               num: 2,
               show: false
@@ -173,7 +176,7 @@
     height: 500px;
   }
   .cart {
-    margin-top:100px;
+    margin-top:50px;
   }
   h1 {
     position:relative;
