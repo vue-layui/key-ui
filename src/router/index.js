@@ -87,7 +87,8 @@ export default new Router({
           {
           path: 'AlertIndex',
           component: AlertIndex
-        }
+        },
+// 13
       ]
     },
       {
@@ -99,7 +100,7 @@ export default new Router({
           component: Login
       },
       {
-        path:'/BigData',
+          path:'/BigData',
           component:BigData
       }
   ]

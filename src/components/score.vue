@@ -251,7 +251,6 @@
     width: 100%;
     height: 475px;
     border: 1px solid #e2e2e2;
-    margin-top:50px;
     margin-bottom:80px;
 }
 .code-h3 {

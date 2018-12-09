@@ -6,9 +6,9 @@
       <document-left>
 
       </document-left>
-      <router-view>
+        <router-view>
 
-      </router-view>
+        </router-view>
     </div>
 </template>
 

@@ -65,6 +65,7 @@
 
 <style lang="scss" scoped>
   .K-swiper{
-    height: 700px;
+    height: 680px;
+    margin-top:30px;
   }
 </style>

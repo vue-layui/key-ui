@@ -1,69 +1,81 @@
 <template>
-    <div>
-        <IndexHeader></IndexHeader>
-        <div class="K-data">
-            <div class="row">
-                <div class="col" v-for="(i,item) in Ndata">
-                    <div class="card" style="width: 18rem;">
-                        <div class="card-body">
-                            <a class="K-four six" style="justify-content: space-between;border-bottom: 1px solid #f6f6f6;">
-                                <span class="K-us">{{i.user}}</span>
-                                <span :class="i.cname">{{i.day}}</span>
-                            </a>
-                            <h5 class="card-title">{{i.num}}</h5>
-                            <a class="K-four K-at"><span class="K-us">{{i.what}}</span><span class="badge">{{i.allnum}} <i>{{i.ico}}</i></span></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <a class="K-four K-at"><span class="K-us">访问量</span>
-                    <span class="badge">
-        <div class="d-inline p-2 bg-primary text-white">今年</div>
-        <div class="d-inline p-2 bg-dark text-white">去年</div>
-        </span>
-                </a>
-                <div class="row">
-                    <div class="col-8">
-                        <canvas id="myChart" width="400" height="200"></canvas>
-                    </div>
-                    <div class="col-4">
-                        <h3>月访问数</h3>
-                        <p>同上期增长</p>
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75"
-                                 aria-valuemin="0" aria-valuemax="100" style="width: 75%">75%
-                            </div>
-                        </div>
-                        <!--//-->
-                        <h3>月下载数</h3>
-                        <p>同上期增长</p>
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-striped progress-bar-animated bg-info" role="progressbar"
-                                 aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 20%">20%
-                            </div>
-                        </div>
-                        <!--//-->
-                        <h3>月收入</h3>
-                        <p>同上期增长</p>
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" role="progressbar"
-                                 aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 25%">25%
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+  <div>
+    <index-header></index-header>
+  <div class="K-data">
+    <div class="row">
+      <div class="col" v-for="(i,item) in Ndata">
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <a class="K-four six" style="justify-content: space-between;border-bottom: 1px solid #f6f6f6;">
+              <span class="K-us">{{i.user}}</span>
+              <span :class="i.cname">{{i.day}}</span>
+            </a>
+            <h5 class="card-title">{{i.num}}</h5>
+            <a class="K-four K-at"><span class="K-us">{{i.what}}</span><span class="badge">{{i.allnum}} <i>{{i.ico}}</i></span></a>
+          </div>
         </div>
+      </div>
     </div>
+    <div class="container">
+      <a class="K-four K-at"><span class="K-us">访问量</span>
+        <span class="badge">
+        <div class="d-inline p-2 bg-primary text-white">今年</div>
+        <div class="d-inline p-2 bg-dark text-white" @click="toggle">去年</div>
+        </span>
+      </a>
+      <div class="row">
+        <div class="col-8">
+        <fullscreen ref="fullscreen" @change="fullscreenChange">
+
+            <canvas id="myChart" width="400" height="200"></canvas>
+
+        </fullscreen>
+        </div>
+
+        <div class="col-4">
+          <h3>月访问数</h3>
+          <p>同上期增长</p>
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75"
+                 aria-valuemin="0" aria-valuemax="100" style="width: 75%">75%
+            </div>
+          </div>
+          <!--//-->
+          <h3>月下载数</h3>
+          <p>同上期增长</p>
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped progress-bar-animated bg-info" role="progressbar"
+                 aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 20%">20%
+            </div>
+          </div>
+          <!--//-->
+          <h3>月收入</h3>
+          <p>同上期增长</p>
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" role="progressbar"
+                 aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 25%">25%
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
 </template>
 
 <script>
-    import IndexHeader from '../components/IndexHeader'
-   // import Chart from '../../node_modules/_chart.js@2.7.3@chart.js/src/chart'
-
+  import IndexHeader from '../components/IndexHeader'
+  import Fullscreen from "vue-fullscreen/src/component.vue"
+  import Chart from 'chart.js';
   export default {
     name: "BigData",
+    components:{
+      Fullscreen,
+      IndexHeader
+    },
+    props:[
+
+    ],
     data() {
       return {
         Ndata: [
@@ -104,7 +116,17 @@
             ico: '👥'
           },
 
-        ]
+        ],
+        fullscreen: false,
+        background:'#fff'
+      }
+    },
+    methods:{
+      toggle () {
+        this.$refs['fullscreen'].toggle()
+      },
+      fullscreenChange (fullscreen) {
+        this.fullscreen = fullscreen
       }
     },
     mounted() {
@@ -143,16 +165,15 @@
           },
         }
       });
-    },
-      components:{
-          IndexHeader
-      }
+    }
   }
 </script>
 
 <style lang="scss" scoped>
+  @import '../assets/css/bootstrap.css';
+
   .K-data {
-    margin-top: 70px;
+    margin-top: 60px;
     width: 100%;
     height: auto;
     background: #f2f2f2;
@@ -222,7 +243,7 @@
   }
   .col-4{
     h3{
-      margin-top: 20px;
+      margin: 20px 0;
     }
   }
   #myChart {

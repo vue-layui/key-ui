@@ -92,30 +92,31 @@
             </p>
             <h2 style="font-weight: 100; margin-top: 15px">核心代码如下：</h2>
             <hr/>
-            <p class="code">
-                <i>正则表达式:</i><br/>
+            <div class="linkage">
+                <p>正则表达式:</p><br/>
                 <span>用户名：/^[a-zA-Z][a-zA-Z0-9]{3,15}/</span><br/>
                 <span>密码：/^[0-9a-z@!$%&*#]{8,16}$/</span><br/>
                 <span>手机号：/^1[3-9]\d{9}$/</span><br/>
                 <span>电子邮件：/^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/</span><br/>
                 <span>身份证号：/^[1-9]\d{5}(18|19|([23]\d))\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\d{3}[0-9Xx]$/</span>
-            </p>
-            <p class="linkage">
-                <i>三级联动:</i><br/>
-                <img src="../../assets/imgs/4.png" alt="">
-                <img src="../../assets/imgs/5.png" alt="">
-            </p>
+            </div>
+            <div class="linkage">
+                <p>三级联动:</p>
+                <iframe class="KeyUiNavCode" src="../../../static/three.txt">
+                </iframe>
+            </div>
         </div>
 
     </div>
 </template>
 
 <script>
+
     export default {
         data() {
             // el:".select"
             return {
-                flag: false,
+                 flag: false,
                 flag1: false,
                 flag2: false,
                 flag3: false,
@@ -145,17 +146,21 @@
                 }
             }
         },
-        updated(){
-
+        updated() {
+            // layui.use('code', function () { //加载code模块
+            //     layui.code(); //引用code方法
+            // });
         },
         mounted() {
-
+            layui.use('code', function(){ //加载code模块
+                layui.code(); //引用code方法
+            });
             // 阻止默认登陆
-            $("#FormSubmit").click(()=>{
-                if(this.flag1 && this.flag2 &&  this.flag3 && this.flag4 && this.flag5){
+            $("#FormSubmit").click(() => {
+                if (this.flag1 && this.flag2 && this.flag3 && this.flag4 && this.flag5) {
                     alert("恭喜您登陆成功")
                 }
-                else{
+                else {
                     alert("请重新按要求输入");
                 }
             })
@@ -180,10 +185,10 @@
             //用户名//////////////
             RegularUser() {
                 let str = $(".FormUser").val();
-                let patt1 = /^[a-zA-Z][a-zA-Z0-9]{3,15}/;
+                let patt1 = /^[a-zA-Z][a-zA-Z0-9]{3,15}$/;
                 // let flag1=false;
                 if (patt1.test(str) == true) {
-                    this.flag1=true;
+                    this.flag1 = true;
                     $("#UserPrompt").html("用户名正确").css({
                         color: "green"
                     });
@@ -200,7 +205,7 @@
                 let patt2 = /^[0-9a-z@!$%&*#]{8,16}$/;
                 // var flag2=false;
                 if (patt2.test(str) == true) {
-                    this.flag2=true;
+                    this.flag2 = true;
                     $("#PassWordPrompt").html("密码输入正确").css({
                         color: "green"
                     });
@@ -217,7 +222,7 @@
                 let patt3 = /^1[3-9]\d{9}$/;
                 // var flag3=false;
                 if (patt3.test(str) == true) {
-                    this.flag3=true;
+                    this.flag3 = true;
                     $("#PhonePrompt").html("手机号输入正确").css({
                         color: "green"
                     });
@@ -234,7 +239,7 @@
                 let patt4 = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
                 // var flag4=false;
                 if (patt4.test(str) == true) {
-                    this.flag4=true;
+                    this.flag4 = true;
                     $("#EmailPrompt").html("邮件输入正确").css({
                         color: "green"
                     });
@@ -251,7 +256,7 @@
                 // var flag5=false;
                 let patt5 = /^[1-9]\d{5}(18|19|([23]\d))\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\d{3}[0-9Xx]$/;
                 if (patt5.test(str) == true) {
-                    this.flag5=true;
+                    this.flag5 = true;
                     $("#CardPrompt").html("身份证号输入正确").css({
                         color: "green"
                     });
@@ -276,11 +281,12 @@
     .BigBox {
         margin-top: 80px;
         margin-left: 50px;
-        h2{
-            padding:10px 20px;
-            background:#f2f2f2;
-            border-left:4px solid #009688;
-            font-size:16px;
+        width:85%;
+        h2 {
+            padding: 10px 20px;
+            background: #f2f2f2;
+            border-left: 4px solid #009688;
+            font-size: 16px;
             border-radius: 3px;
         }
     }
@@ -304,7 +310,6 @@
                 width: 250px;
                 height: 37px;
             }
-            //爱好/////////
             .live {
                 display: inline-block;
                 vertical-align: middle;
@@ -417,10 +422,10 @@
         }
         /*说明*/
         .state {
-            padding:10px 20px;
-            background:#f2f2f2;
-            border-left:4px solid #009688;
-            font-size:16px;
+            padding: 10px 20px;
+            background: #f2f2f2;
+            border-left: 4px solid #009688;
+            font-size: 16px;
             border-radius: 3px;
 
         }
@@ -428,11 +433,20 @@
         .code {
             width: 90%;
             border-top: 30px;
-            background: black;
-            color: white;
+            background: #f0f0f0;
+            color: black;
             margin-top: 20px;
-            i {
-                font-size: 18px;
+            border-bottom:1px solid #ccc;
+            p {
+                width:100%;
+                padding-left:10px;
+                background:#f2f2f2;
+                height:30px;
+                line-height:30px;
+                color:#737383;
+                font-size:16px;
+                box-sizing: border-box;
+
             }
             span {
                 line-height: 35px;
@@ -441,17 +455,30 @@
         }
         .linkage {
             margin-top: 30px;
-            i {
-                font-size: 18px;
-            }
-            img:nth-of-type(1) {
-                width: 90%;
-            }
-            img:nth-of-type(2) {
-                width: 90%;
-                height: 400px;
+            background: #f0f0f0;
+            padding-left:20px;
+            padding-bottom:30px;
+            p{
+                display:block;
+                width:90%;
+                padding-left:10px;
+                background:#f2f2f2;
+                height:30px;
+                line-height:30px;
+                color:#737383;
+                font-size:16px;
+                box-sizing: border-box;
+                border-bottom:1px solid #ccc;
             }
         }
     }
 
+    .KeyUiNavCode {
+        box-sizing:border-box;
+        width: 90%;
+        height: 500px;
+        background: #f0f0f0;
+        border: 0;
+        resize: none;
+    }
 </style>

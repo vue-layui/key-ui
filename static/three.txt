@@ -1,0 +1,51 @@
+                 <template>
+                      <div class="address">
+                          <label>所在城市:</label>
+                          省：<select v-model="user.selCity.sheng">
+                          <option :value="s" v-for="s in cityData">{{s.province}}</option>
+                      </select>
+                              市：<select v-model="user.selCity.shi">
+                              <option :value="c" v-for="c in user.selCity.sheng.citys">{{c.city}}</option>
+                          </select>
+                              区：<select v-model="user.selCity.qu">
+                              <option :value="q" v-for="q in user.selCity.shi.areas">{{q}}</option>
+                          </select>
+                      </div>
+              </template>
+            <script>
+                  export default {
+                      data() {
+                          // el:".select"
+                          return {
+                              flag: false,
+                              flag1: false,
+                              flag2: false,
+                              flag3: false,
+                              flag4: false,
+                              flag5: false,
+                              cityData: [
+                                  {
+                                      province: "陕西省",
+                                      citys: [
+                                          {city: "西安市", areas: ["钟楼区", "雁塔区", "南窑头区", "高新区"]}
+                                      ]
+                                  },
+                                  {
+                                      province: "甘肃省",
+                                      citys: [
+                                          {city: "平凉市", areas: ["崇信县", "泾川县", "新耀县", "灵台县", "华亭县"]}
+                                      ]
+                                  }
+                              ],
+                              user: {
+                                  selCity: {
+                                      sheng: "",
+                                      shi: "",
+                                      qu: ""
+                                  }
+
+                              }
+                          }
+                      },
+                  }
+             </script>

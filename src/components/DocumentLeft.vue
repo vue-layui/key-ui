@@ -149,7 +149,7 @@
          this.$router.push('/DocuMent/Car')
        },
        goca(){
-         this.$router.push('/Document/AlertIndex')
+         this.$router.push('/DocuMent/AlertIndex')
        }
     }
   }

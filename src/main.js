@@ -7,7 +7,6 @@ import store from './store'
 
  import './assets/css/all.css'
 import './assets/css/iconfont.css'
-import './assets/css/bootstrap.css'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 // require styles
 import $ from 'jquery'

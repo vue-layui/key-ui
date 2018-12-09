@@ -73,6 +73,7 @@
     .Cont {
       text-align: center;
       line-height: 1;
+      margin-top:30px;
     }
 
     .Title {

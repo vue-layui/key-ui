@@ -18,7 +18,7 @@
     export default {
         methods:{
             alertJump(){
-                document.getElementsByTagName('h3')[0].className = "AlertJumpBox AlertJumpBox_active";
+                 document.getElementsByTagName('h3')[0].className = "AlertJumpBox AlertJumpBox_active";
                  document.querySelector(".master1").style.display="block";
             },
             closeJumpAlert(){

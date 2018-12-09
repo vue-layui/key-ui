@@ -15,7 +15,7 @@
           <button class="K-add">button</button>
         </div>
       </div>
-      <div class="K-row row">
+      <div class="K-row row1">
         <input type="checkbox" id="simple_1">
         <label for="simple_1"></label>
         <input type="checkbox" id="simple_2">

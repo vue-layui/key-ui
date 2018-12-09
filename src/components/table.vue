@@ -9,63 +9,9 @@
 
         <div class="KeyUiNavCode">
             <p>组件代码</p>
-            <textarea name="" readonly >
+            <iframe  src="../../static/table.txt" >
 
-
-
-
-
-                        <script>
-                        export default {
-                            name: 'TableOne',
-                            data () {
-                                return {
-                                    newPerson: {
-                                        index:'',
-                                        name: '',
-                                        age: 0,
-                                        school: ''
-                                    },
-                                    people: [
-                                        {
-                                            name: '王明',
-                                            age: 22,
-                                            school: '清华大学'
-                                        },
-                                        {
-                                            name: '李磊',
-                                            age: 21,
-                                            school: '复旦大学'
-                                        },
-                                        {
-                                            name: '陈晨',
-                                            age: 19,
-                                            school: '交通大学'
-                                        },
-                                    ]
-                                }
-                            },
-                            methods:{
-                                createPerson(){
-                                    this.people.push(this.newPerson);
-                                    // 添加完newPerson对象后，重置newPerson对象
-                                    this.newPerson = {index:'',name: '', age: 0, school: ''}
-                                },
-                                deletePerson(index){
-                                    // 删一个数组元素
-                                    this.people.splice(index,1);
-                                }
-                            }
-                        }
-                        </script>
-
-
-                                        <!-- Add "scoped" attribute to limit CSS to this component only -->
-                        <style scoped>
-
-                        </style>
-
-            </textarea>
+            </iframe>
         </div>
 
         <div class="TableLine">
@@ -138,7 +84,7 @@ ul li{
 .TableLine{
     border-bottom: 1px solid #eeeeee;
     position: relative;
-    margin-top: 28px;
+    margin-top: 40px;
 }
 .TableBase{
     color: #333;
@@ -189,7 +135,7 @@ ul li{
     width: 90%;
     border: 1px solid #ccc;
     margin-top: 10px;
-
+    margin-bottom: 20px;
     p {
         width: 100%;
         padding-left: 10px;
@@ -202,7 +148,7 @@ ul li{
         border-bottom: 1px solid #ccc;
     }
 
-    textarea {
+    iframe{
         width: 100%;
         height: 500px;
         background: #f0f0f0;
