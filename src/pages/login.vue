@@ -23,7 +23,7 @@
               <label>密码</label>
             </div>
             <div class="submit">
-              <button class="dark" >Login</button>
+              <button class="dark dark1" >Login</button>
             </div>
         </div>
         <div id="register">

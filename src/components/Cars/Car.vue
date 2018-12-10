@@ -63,13 +63,17 @@
             <span>~案例展示~</span>
             <img src="../../../static/img/car.gif" alt=""/>
         </div>
+        <keyUiLogo></keyUiLogo>
     </div>
 
 </template>
 
 <script>
-    export default {
-        name: "Car",
+    import keyUiLogo from '../common/keyUiLogo'
+    export default {name: "Car",
+        components:[
+            keyUiLogo
+        ],
       data() {
           return {
             List: [{
@@ -92,9 +96,6 @@
       },
       mounted() {
         this.account()
-      },
-      computed: {
-
       },
       watch: {
         List: {

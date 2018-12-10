@@ -1,117 +1,118 @@
 <template>
     <div class="left">
-        <div class="BigBox">
-            <h2 style="font-weight: 100;">基本的表单验证及三级联动：</h2>
-            <hr/>
-            <form>
-                <label>用户名：</label><input
-                    @blur="RegularUser()"
-                    class="FormUser"
-                    type="text"
-                    placeholder="请输入用户名">
-                <i id="UserPrompt"></i><br/>
-                <label>密码：</label><input
-                    @blur="RegularPassWord()"
-                    class="FormPassword"
-                    type="password"
-                    placeholder="请输入用户密码">
-                <i id="PassWordPrompt"></i><br/>
-                <label>验证手机：</label><input
-                    @blur="RegularPhone()"
-                    class="FromPhone"
-                    type="text"
-                    placeholder="请输入您的手机号">
-                <i id="PhonePrompt"> </i><br/>
-                <label>验证邮箱：</label><input
-                    @blur="RegularEmail()"
-                    class="FromEmail"
-                    type="text"
-                    placeholder="请输入您的电子邮箱">
-                <i id="EmailPrompt"></i><br/>
-                <label>身份证号：</label><input
-                    @blur="RegularCard()"
-                    class="FromCard"
-                    type="text"
-                    placeholder="请输入您的身份证号">
-                <i id="CardPrompt"></i><br/>
-                <!--爱好-->
-                <label class="live">喜好：</label>
-                <div class="box_01" id="box" @click="flag=!flag">
-                    <p id="con">阅读</p>
-                    <img id="ps01" src="../../assets/imgs/3.png" alt="">
-                    <ul id="uls" v-show="flag">
-                        <li>阅读</li>
-                        <li>写代码</li>
-                        <li>游泳</li>
-                        <li>爬山</li>
-                        <li>上课</li>
-                        <li>聊天</li>
-                        <li>上网</li>
-                    </ul>
-                </div>
-                <br/>
-                <!--原始复选框-->
-                <div class="check">
-                    <label>原始复选框:</label>
-                    <label>写作</label><input type="checkbox">
-                    <label>阅读</label><input type="checkbox">
-                    <label>游戏</label><input type="checkbox">
-                </div>
-                <div class="radio">
-                    <label>单选框:</label>
-                    <label>男</label><input type="radio" name="sex">
-                    <label>女</label><input type="radio" name="sex">
-                </div>
-                <!--下拉列表  -->
-                <div class="address">
-                    <label>所在城市:</label>
-                    省：<select v-model="user.selCity.sheng">
-                    <option :value="s" v-for="s in cityData">{{s.province}}</option>
-                </select>
-                    市：<select v-model="user.selCity.shi">
-                    <option :value="c" v-for="c in user.selCity.sheng.citys">{{c.city}}</option>
-                </select>
-                    区：<select v-model="user.selCity.qu">
-                    <option :value="q" v-for="q in user.selCity.shi.areas">{{q}}</option>
-                </select>
-                </div>
-                <!--普通文本域-->
+            <div class="BigBox">
+                <h2 style="font-weight: 100;">基本的表单验证及三级联动：</h2>
+                <hr/>
+                <form>
+                    <label>用户名：</label><input
+                        @blur="RegularUser()"
+                        class="FormUser"
+                        type="text"
+                        placeholder="请输入用户名">
+                    <i id="UserPrompt"></i><br/>
+                    <label>密码：</label><input
+                        @blur="RegularPassWord()"
+                        class="FormPassword"
+                        type="password"
+                        placeholder="请输入用户密码">
+                    <i id="PassWordPrompt"></i><br/>
+                    <label>验证手机：</label><input
+                        @blur="RegularPhone()"
+                        class="FromPhone"
+                        type="text"
+                        placeholder="请输入您的手机号">
+                    <i id="PhonePrompt"> </i><br/>
+                    <label>验证邮箱：</label><input
+                        @blur="RegularEmail()"
+                        class="FromEmail"
+                        type="text"
+                        placeholder="请输入您的电子邮箱">
+                    <i id="EmailPrompt"></i><br/>
+                    <label>身份证号：</label><input
+                        @blur="RegularCard()"
+                        class="FromCard"
+                        type="text"
+                        placeholder="请输入您的身份证号">
+                    <i id="CardPrompt"></i><br/>
+                    <!--爱好-->
+                    <label class="live">喜好：</label>
+                    <div class="box_01" id="box" @click="flag=!flag">
+                        <p id="con">阅读</p>
+                        <img id="ps01" src="../../assets/imgs/3.png" alt="">
+                        <ul id="uls" v-show="flag">
+                            <li>阅读</li>
+                            <li>写代码</li>
+                            <li>游泳</li>
+                            <li>爬山</li>
+                            <li>上课</li>
+                            <li>聊天</li>
+                            <li>上网</li>
+                        </ul>
+                    </div>
+                    <br/>
+                    <!--原始复选框-->
+                    <div class="check">
+                        <label>原始复选框:</label>
+                        <label>写作</label><input type="checkbox">
+                        <label>阅读</label><input type="checkbox">
+                        <label>游戏</label><input type="checkbox">
+                    </div>
+                    <div class="radio">
+                        <label>单选框:</label>
+                        <label>男</label><input type="radio" name="sex">
+                        <label>女</label><input type="radio" name="sex">
+                    </div>
+                    <!--下拉列表  -->
+                    <div class="address">
+                        <label>所在城市:</label>
+                        省：<select v-model="user.selCity.sheng">
+                        <option :value="s" v-for="s in cityData">{{s.province}}</option>
+                    </select>
+                        市：<select v-model="user.selCity.shi">
+                        <option :value="c" v-for="c in user.selCity.sheng.citys">{{c.city}}</option>
+                    </select>
+                        区：<select v-model="user.selCity.qu">
+                        <option :value="q" v-for="q in user.selCity.shi.areas">{{q}}</option>
+                    </select>
+                    </div>
+                    <!--普通文本域-->
 
-                <div class="text">
-                    <label>普通文本域：</label><br/>
-                    <textarea cols="100" rows="8"></textarea>
+                    <div class="text">
+                        <label>普通文本域：</label><br/>
+                        <textarea cols="100" rows="8"></textarea>
+                    </div>
+                    <!--提交按钮-->
+                    <input calss="FormSubmit" type="submit" value="提交" id="FormSubmit">
+                    <input calss="FormReset" type="reset" value="重置">
+                </form>
+                <!--说明-->
+                <p class="state">通过上述的小小演示，你已经大致了解了一波 keyui的表单模块，你可能会觉得他还算不错，
+                    但并不太过瘾？譬如你希望看到日期选择、图片上传等等。然而你必须认识到，本篇文档核心介绍的是表单元素，对于日期、
+                    上传等更多丰富的元素，其实也是可以很方便地穿插在内的。
+                </p>
+                <h2 style="font-weight: 100; margin-top: 15px">核心代码如下：</h2>
+                <hr/>
+                <div class="linkage">
+                    <p>正则表达式:</p><br/>
+                    <span>用户名：/^[a-zA-Z][a-zA-Z0-9]{3,15}/</span><br/>
+                    <span>密码：/^[0-9a-z@!$%&*#]{8,16}$/</span><br/>
+                    <span>手机号：/^1[3-9]\d{9}$/</span><br/>
+                    <span>电子邮件：/^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/</span><br/>
+                    <span>身份证号：/^[1-9]\d{5}(18|19|([23]\d))\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\d{3}[0-9Xx]$/</span>
                 </div>
-                <!--提交按钮-->
-                <input calss="FormSubmit" type="submit" value="提交" id="FormSubmit">
-                <input calss="FormReset" type="reset" value="重置">
-            </form>
-            <!--说明-->
-            <p class="state">通过上述的小小演示，你已经大致了解了一波 keyui的表单模块，你可能会觉得他还算不错，
-                但并不太过瘾？譬如你希望看到日期选择、图片上传等等。然而你必须认识到，本篇文档核心介绍的是表单元素，对于日期、
-                上传等更多丰富的元素，其实也是可以很方便地穿插在内的。
-            </p>
-            <h2 style="font-weight: 100; margin-top: 15px">核心代码如下：</h2>
-            <hr/>
-            <div class="linkage">
-                <p>正则表达式:</p><br/>
-                <span>用户名：/^[a-zA-Z][a-zA-Z0-9]{3,15}/</span><br/>
-                <span>密码：/^[0-9a-z@!$%&*#]{8,16}$/</span><br/>
-                <span>手机号：/^1[3-9]\d{9}$/</span><br/>
-                <span>电子邮件：/^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/</span><br/>
-                <span>身份证号：/^[1-9]\d{5}(18|19|([23]\d))\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\d{3}[0-9Xx]$/</span>
+                <div class="linkage">
+                    <p>三级联动:</p>
+                    <iframe class="KeyUiNavCode" src="../../../static/three.txt">
+                    </iframe>
+                </div>
             </div>
-            <div class="linkage">
-                <p>三级联动:</p>
-                <iframe class="KeyUiNavCode" src="../../../static/three.txt">
-                </iframe>
+            <div class="KeyUiP">
+                Keyui用心与你沟通
             </div>
         </div>
-
-    </div>
 </template>
 
 <script>
-
     export default {
         data() {
             // el:".select"
@@ -295,7 +296,6 @@
         width: 86.955%;
         background: white;
         float: right;
-
         form {
             font-size: 14px;
             margin-top: 30px;
@@ -323,6 +323,7 @@
                 border: 1px solid #e6e6e6;
                 position: relative;
                 background: white;
+                padding-left:10px;
                 #con {
                     width: 250px;
                     height: 37px;
@@ -339,12 +340,13 @@
                     position: absolute;
                     left: 0px;
                     top: 37px;
-                    /*box-shadow: 0 0 5px;*/
+                    padding-left:10px;
                     background: white;
                     height: 200px;
                     overflow-y: auto;
                     border: 1px solid #cccccc;
                     border-top: 0;
+                    z-index:2;
                     li {
                         line-height: 37px;
                         list-style: none;
@@ -374,7 +376,7 @@
             }
             /*单选按钮*/
             .radio {
-                /*padding-top: 15px;*/
+                padding-top: 15px;
                 overflow: hidden;
                 label {
                     margin-right: 10px;
@@ -470,6 +472,13 @@
                 box-sizing: border-box;
                 border-bottom:1px solid #ccc;
             }
+            iframe{
+                width:100%;
+            }
+            span{
+                height:30px;
+                line-height:30px;
+            }
         }
     }
 
@@ -480,5 +489,15 @@
         background: #f0f0f0;
         border: 0;
         resize: none;
+    }
+    .KeyUiP{
+        margin-left:60px;
+        margin-top:20px;
+        width:90%;
+        padding:10px 20px;
+        background:#f2f2f2;
+        border-left:4px solid #009688;
+        font-size:16px;
+        border-radius: 3px;
     }
 </style>

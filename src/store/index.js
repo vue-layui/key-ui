@@ -10,7 +10,7 @@ let count = parseInt(localStorage.getItem('count') || '[]');
 // 使用 es6 语法把vuex的实例对象输出
 export default new Vuex.Store({
   state: {
-    count: count
+    count: 9999
   },
   getters: {
     // 接受state作为参数，每次 count发生变化时 ， 都会被调用

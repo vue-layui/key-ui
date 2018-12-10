@@ -91,7 +91,7 @@
           {
             user: '下载',
             day: '年',
-            num: '33，3555',
+            num: this.$store.state.count,
             what: '新下载',
             allnum: '10%',
             cname: 'badge badge-success',

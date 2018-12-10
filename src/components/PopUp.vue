@@ -33,10 +33,10 @@ export default {
       this.$router.push('/DocuMent')
     },
       goteam(){
-          this.$router.push('/DocuMent/team')
+          this.$router.push('/team')
       },
       goBigData(){
-          this.$router.push('/DocuMent/BigData')
+          this.$router.push('/BigData')
       },
     mouseEnter(index){
       this.itemHoverIndex=index;

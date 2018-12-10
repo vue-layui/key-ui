@@ -17,7 +17,7 @@
                     <td>{{person.name}}</td>
                     <td>{{person.age}}</td>
                     <td>{{person.school}}</td>
-                    <td><button @click="deletePerson(index)">remove</button></td>
+                    <td><button class="removeBtn" @click="deletePerson(index)">remove</button></td>
                   </tr>
                   <tr class="lastr">
                     <td></td>

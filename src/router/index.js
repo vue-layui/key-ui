@@ -11,9 +11,10 @@ import DocumentRight from '../components/DocumentRight'
 import ButtOn from '../components/ButtOn'
 import Car from '../components/Cars/Car'
 import BigData from '../pages/BigData'
-//
+//wwq
 import Tab from '../components/tabs'
 import RotaTion from '../components/rotation'
+import daohang2 from '../pages/daohang2'
 //lzk
 import WebPaging from '../components/WebPaging/WebPaging'
 import Biaodan from '../components/From/BiaoDan'
@@ -88,7 +89,10 @@ export default new Router({
           path: 'AlertIndex',
           component: AlertIndex
         },
-// 13
+          {
+              path: 'daohang',
+              component: daohang2
+          }
       ]
     },
       {

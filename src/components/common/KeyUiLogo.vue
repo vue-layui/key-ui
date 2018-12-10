@@ -15,7 +15,7 @@
     .KeyCopyright {
         height: 50px;
         margin: 0 auto;
-        margin-top: 150px;
+        /*margin-top: 150px;*/
         text-align: center;
         p {
             font-size: 14px;

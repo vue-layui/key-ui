@@ -40,7 +40,7 @@
 <script>
 
     import Tabs1 from "../components/Tabs/tabs1";
-    import Tabs2 from "../components/Tabs/tabs2";
+    import Tabs2 from "../components/Tabs/tabs00";
     import Tabs3 from "../components/Tabs/tabs3";
     import navigation1 from "../components/Tabs/navigation1";
     export default {

@@ -2,7 +2,8 @@
     <div>
         <div class="rota">
             <div class="toptitle">通用轮播组件文档 - keyui</div>
-            <div class="introduction"><p>本轮播主要适用于跑马灯/轮播等交互场景。它并非单纯地为焦点图而生，准确地说，它可以满足任何类型内容的轮播式切换操作，更可以胜任 FullPage （全屏上下轮播）的需求，简洁而不失强劲，灵活而优雅。</p></div>
+            <div class="introduction"><p>本轮播主要适用于跑马灯/轮播等交互场景。它并非单纯地为焦点图而生，准确地说，
+                它可以满足任何类型内容的轮播式切换操作，更可以胜任全屏上下轮播的需求，简洁而不失强劲，灵活而优雅。</p></div>
             <div class="introduction introduction2"><p>依赖加载组件：无 （直接引用子组件，修改其样式即可）</p></div>
             <div class="tabsA">
                 <p>左右点击无缝划出轮播</p>
@@ -29,7 +30,7 @@
                 <p>由于轮播的使用非常简单，所以本篇不做过于详细的讲解，你也可以前往示例页面进行更为直观的了解。需按照场景选择性使用。</p>
             </div>
             <div class="introduction introduction2 introduction3">
-                <p>keyui - 遇见世界遇见你</p>
+                <p>keyui - 只为您快速建站</p>
             </div>
         </div>
         <div class="CarMobile">
@@ -76,7 +77,7 @@
     padding-top: 16px;
 }
 .tabsA{
-    margin-top: 50px;
+    margin-top: 80px;
     width: 100%;
     height: 120px;
     border-top:1px solid #eeeeee;
@@ -96,7 +97,7 @@
 }
 .tabsA p:last-child{
     font-size: 14px;
-    line-height: 100px;
+    line-height: 50px;
 }
 .tabsB{
     height: 60px;
@@ -108,6 +109,8 @@
     top: -40px;
 }
 .introduction3{
+    line-height:100%;
+    margin-top:30px;
     margin-bottom: 30px;
 }
 </style>

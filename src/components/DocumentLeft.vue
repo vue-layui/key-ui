@@ -54,7 +54,7 @@
           <li class="key_li" @click="golo">
             <a class="key_a">
               <i class="iconfont icon-jiazai"></i>
-              <span>加载</span>
+              <span>懒加载</span>
               <i class="iconfont icon-yousanjiaoxiangyoumianxing key_right"></i>
             </a>
           </li>
@@ -86,10 +86,10 @@
               <i class="iconfont icon-yousanjiaoxiangyoumianxing key_right"></i>
             </a>
           </li>
-        <li class="key_li" >
+        <li class="key_li" @click="topic">
           <a class="key_a">
             <i class="iconfont icon-kaifagongju"></i>
-            <span>数据展示</span>
+            <span>图片展示</span>
             <i class="iconfont icon-yousanjiaoxiangyoumianxing key_right"></i>
           </a>
         </li>
@@ -150,7 +150,10 @@
        },
        goca(){
          this.$router.push('/DocuMent/AlertIndex')
-       }
+       },
+        topic(){
+            this.$router.push('/DocuMent/daohang')
+        }
     }
   }
 </script>
@@ -159,14 +162,18 @@
   .nav1{
     margin-top: 60px;
     width: 200px;
-    height: 100%;
+    height: 620px;
+      background:#282c35;
     float: left;
     position: fixed;
     left: 0;
   }
 
   .key_left_ul {
+      position: fixed;
+      left: 0;
     height: 100%;
+      width:200px;
     display: block;
     padding: 0;
   }
